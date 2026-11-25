@@ -2,6 +2,8 @@
 const cors = require('cors');
 const pool = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
+const productosRoutes = require('./routes/productos.routes');
+const insumosRoutes = require('./routes/insumos.routes');
 
 const app = express();
 
@@ -22,5 +24,7 @@ app.get('/api/health', async (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/productos', productosRoutes);
+app.use('/api/insumos', insumosRoutes);
 
 module.exports = app;
