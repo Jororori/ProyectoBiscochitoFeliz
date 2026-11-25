@@ -30,8 +30,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - ./backend/src:/app/src
+      - ./backend/server.js:/app/server.js
     command: npm run dev
 
   # frontend:
