@@ -15,7 +15,7 @@ const obtenerRecomendacion = async (req, res) => {
              pr.id AS prediccion_id, pr.fecha_prediccion, pr.producto_id,
              p.nombre AS producto, c.nombre AS categoria,
              pr.cantidad_estimada,
-             CEIL(pr.cantidad_estimada * (1 + $2))::INTEGER AS cantidad_recomendada
+             CEIL(pr.cantidad_estimada * (1 + $2::NUMERIC))::INTEGER AS cantidad_recomendada
       FROM predicciones pr
       JOIN productos p ON p.id = pr.producto_id
       JOIN categorias c ON c.id = p.categoria_id
