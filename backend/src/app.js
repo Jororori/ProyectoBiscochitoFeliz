@@ -6,6 +6,7 @@ const productosRoutes = require('./routes/productos.routes');
 const insumosRoutes = require('./routes/insumos.routes');
 const ventasRoutes = require('./routes/ventas.routes');
 const temporadasRoutes = require('./routes/temporadas.routes');
+const prediccionRoutes = require('./routes/prediccion.routes');
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.use('/api/productos', productosRoutes);
 app.use('/api/insumos', insumosRoutes);
 app.use('/api/ventas', ventasRoutes);
 app.use('/api/temporadas', temporadasRoutes);
+app.use('/api/prediccion', prediccionRoutes);
 
 module.exports = app;
